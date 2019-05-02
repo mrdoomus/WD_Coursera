@@ -1,0 +1,3 @@
+browser-sync start --server --directory --files "*"
+<div> - Block elements, requires own-line
+<span> - inline elements, sit on same line
