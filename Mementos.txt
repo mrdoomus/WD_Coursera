@@ -1,3 +1,153 @@
 browser-sync start --server --directory --files "*"
 <div> - Block elements, requires own-line
 <span> - inline elements, sit on same line
+
+semantic - Realting to language logic
+
+--- 
+*Character Entity References
+< - &lt;
+> - &gt;
+& - &amp;
+Copyright - &copy;
+Non breaking space - &nbsp;
+" " - &quot;
+
+---
+*CSS
+
+ID can only be written ONE TIME per CSS
+
+---
+*Selector
+p{
+
+}
+Class - .top-story{
+
+}
+ID - #first-comment{
+
+}
+
+*Aggrupation selectors
+div, .blue {
+
+}
+
+---
+*Combining selectos 
+p.big {
+
+}
+
+(p is a DIRECT child of article) article > p {
+
+}
+
+(p is a INDIRECT child of article) article p {
+
+}
+
+selector + selector - Adjacent sibling selector
+selector ~ selector - General sibling selector
+
+---
+*Pseudo-Class Selector
+:link
+:visited
+:hover
+:active
+:nth-child(...)
+
+(Example of Pseudo classing a link)
+
+a:link, a:visited {
+    background-color: green;
+    color: black
+}
+
+a:hover, a:active {
+    backgrond-color: red;
+    color: purple;
+}
+
+(Nesting child a link - Let's suppose there're 3 links, we want the 3rd)
+header li:nth-child(3) {
+    font-size: 24px;   
+}
+
+(Odd pattern)
+section div:nth-child(odd){
+    background-color: gray;
+}
+
+(4 div element changes hover behaviour) 
+section div:nth-child(4):hover {
+    background-color: green;
+    cursor: pointeR;
+}
+
+---
+*Linking niggas
+<link rel="stylesheet" href="style.css"> 
+
+---
+*Conflict Resolution
+Origin, Merge, Inheritance, Specificity
+LAST DECLARATION WINS (html styling and in-line > stylesheet)
+DECLARATIONS MERGE
+-
+MOST SPECIFIC SELECTOR COMBINATION WINS
+style="..." > ID > Class, psudoclass, attribute, # of elements
+
+!important - Override EVERYTHING
+
+---
+*Box model
+box-sizing: border-box; ALWAYS (Not inherited)
+Constraints the width to specified width.
+
+Horizontal Margin - They merge (both sum)
+Vertical Margin - They collaps (greater wins)
+* {
+    box-sizing: border-box;
+}
+
+---
+*Positioning elements by floating
+float: - Out of the normal document flow
+
+(Let's say there's something floating to the left
+and we DON'T want a div to be collapsed)
+
+section {
+    clear: left (or both);
+} 
+
+---
+*Relativa & Absolute Positioning
+position: relative; - Original position of an element
+position: absolute; - Tracks ancestors in order to define orignal position
+
+---
+*Media Queries
+
+Within the parentesis, check TRUE or FALSE.
+@media (max-width: 767px) {
+    p {
+        color:blue;
+    }
+}
+
+@media (max-width: 800px) {...}
+@media (min-width: 800px) {...}
+@media (orientation: portrait) {...}
+@media screen {...}
+@media print {...}
+
+Devices WITH dith within range
+@media (min-width: 768px) and (max-width: 991px) {...}
+
+Devices OR ranges
+@media (max-width: 767px) , (min-width: 992px) {...}
